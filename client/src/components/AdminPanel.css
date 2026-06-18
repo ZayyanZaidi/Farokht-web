@@ -1,0 +1,199 @@
+.admin-panel {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px;
+  background: #fff;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 77, 64, 0.2);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.admin-panel-header h3 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.admin-panel-header p {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.admin-panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.admin-panel-card {
+  background: var(--bg-cream);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.admin-panel-card h4 {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.admin-form label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-body);
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px 14px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.admin-preview {
+  margin: 12px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 180px;
+}
+
+.admin-preview img,
+.admin-preview video {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+.admin-form-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.admin-blog-list {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--card-border);
+}
+
+.admin-blog-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.admin-blog-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg-cream);
+  border-radius: 12px;
+}
+
+.admin-blog-list-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-blog-list-actions button {
+  border: none;
+  background: var(--teal);
+  color: var(--text-dark);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-blog-list-actions button.danger {
+  background: #fde8e8;
+  color: #c0392b;
+}
+
+.admin-panel-message {
+  margin-top: 16px;
+  font-weight: 600;
+  color: var(--teal-dark);
+}
+
+.admin-bg-card {
+  margin-top: 24px;
+}
+
+.admin-bg-hint {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.admin-bg-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.admin-bg-row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  align-items: center;
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px solid var(--card-border);
+}
+
+.admin-bg-thumb {
+  width: 96px;
+  height: 72px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.admin-bg-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-bg-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-bg-label {
+  font-weight: 700;
+  min-width: 180px;
+}
+
+.admin-bg-reset {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .admin-panel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-bg-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-bg-thumb {
+    width: 100%;
+    height: 140px;
+  }
+}

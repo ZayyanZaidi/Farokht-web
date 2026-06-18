@@ -1,0 +1,65 @@
+.farokht-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header: orange Farokht + pin + urdu */
+.farokht-logo--header {
+  gap: 12px;
+}
+
+.farokht-logo-en-header {
+  font-family: 'Nunito', 'Inter', system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #e8754a;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.farokht-header-pin {
+  flex-shrink: 0;
+  display: block;
+}
+
+.farokht-logo-urdu-inline {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #17c3b2;
+  line-height: 1;
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+}
+
+.farokht-logo-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Hero: stacked centered */
+.farokht-logo--hero {
+  flex-direction: column;
+  gap: 6px;
+}
+
+.farokht-logo-mark--hero {
+  margin-bottom: 4px;
+}
+
+.farokht-logo-urdu {
+  font-size: clamp(2.4rem, 6vw, 3.2rem);
+  font-weight: 800;
+  color: var(--teal-deep);
+  line-height: 1;
+}
+
+.farokht-logo-en-sub {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--orange-brand);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}

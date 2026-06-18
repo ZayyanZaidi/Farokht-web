@@ -1,0 +1,39 @@
+.media-upload {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.media-upload-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.media-upload-btn {
+  background: var(--teal);
+  color: var(--text-dark);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.media-upload-btn:hover:not(:disabled) {
+  background: var(--teal-dark);
+}
+
+.media-upload-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.media-upload-error {
+  width: 100%;
+  color: #c0392b;
+  font-size: 0.85rem;
+  margin: 0;
+}

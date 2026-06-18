@@ -1,0 +1,192 @@
+.brand-profile-widgets {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  padding-top: 28px;
+}
+
+.brand-phone-annotation {
+  position: absolute;
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  z-index: 2;
+}
+
+.brand-phone-annotation--tl {
+  top: 0;
+  left: -20%;
+}
+
+.brand-phone-annotation--tr {
+  top: 12%;
+  right: -28%;
+}
+
+.brand-phone-annotation--br {
+  bottom: 18%;
+  right: -32%;
+}
+
+.brand-phone-frame {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.brand-phone-banner {
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+}
+
+.brand-phone-profile {
+  display: flex;
+  gap: 10px;
+  padding: 0 14px 12px;
+  margin-top: -28px;
+  align-items: flex-end;
+}
+
+.brand-phone-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+}
+
+.brand-phone-profile strong {
+  font-size: 0.88rem;
+  display: block;
+}
+
+.brand-phone-profile p {
+  font-size: 0.65rem;
+  color: #666;
+  margin: 4px 0 0;
+  line-height: 1.35;
+}
+
+.brand-phone-verified {
+  font-size: 0.72rem;
+}
+
+.brand-phone-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 10px 10px;
+}
+
+.brand-phone-tabs button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 8px 6px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #666;
+  transition: background 0.2s, color 0.2s;
+}
+
+.brand-phone-tabs button.active {
+  background: #f47b20;
+  color: #fff;
+}
+
+.brand-phone-tabs button:hover:not(.active) {
+  background: #f5f5f5;
+}
+
+.brand-phone-body {
+  padding: 0 12px 16px;
+  min-height: 160px;
+}
+
+.brand-phone-catalogue {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.brand-phone-product {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.brand-phone-product img {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.brand-phone-product h5 {
+  font-size: 0.7rem;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+
+.brand-phone-product p {
+  font-size: 0.68rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.brand-phone-product span {
+  font-size: 0.62rem;
+  color: #f39c12;
+}
+
+.brand-phone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.brand-phone-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.brand-phone-grid img:hover {
+  opacity: 0.85;
+}
+
+.brand-phone-about h5 {
+  font-size: 0.8rem;
+  margin: 0 0 10px;
+}
+
+.brand-phone-about p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  margin: 6px 0;
+  color: #444;
+}
+
+@media (max-width: 900px) {
+  .brand-profile-widgets {
+    margin: 0 auto;
+  }
+
+  .brand-phone-annotation--tl,
+  .brand-phone-annotation--tr,
+  .brand-phone-annotation--br {
+    position: static;
+    display: block;
+    margin-bottom: 4px;
+  }
+}

@@ -1,0 +1,71 @@
+.store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.store-badges .store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1e1d1b !important;
+  color: #fff !important;
+  padding: 8px 16px 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  min-width: 155px;
+  width: auto !important;
+  min-height: 52px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.store-badges .store-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  color: #fff !important;
+}
+
+.store-badge-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.store-badge-icon--apple {
+  width: 26px;
+  height: 26px;
+  color: #fff;
+}
+
+.store-badges .store-badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  padding: 0 !important;
+  color: #fff !important;
+}
+
+.store-badges .store-badge-line-sm,
+.store-badges .store-badge-line-lg {
+  color: #fff !important;
+}
+
+.store-badge-line-sm {
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  opacity: 0.95;
+}
+
+.store-badge-line-lg {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.cyan-mega-card .store-badges .store-badge {
+  background: #0d0d0d !important;
+}

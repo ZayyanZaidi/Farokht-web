@@ -1,0 +1,127 @@
+.support-local-sign {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  min-height: 380px;
+  margin-left: auto;
+}
+
+.support-local-skyline {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #b8dff5 0%, #e8f4fc 45%, transparent 70%);
+  border-radius: 16px;
+  opacity: 0.9;
+}
+
+.support-local-skyline::after {
+  content: '';
+  position: absolute;
+  bottom: 28%;
+  left: 5%;
+  right: 5%;
+  height: 80px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 8px,
+    rgba(80, 80, 80, 0.15) 8px,
+    rgba(80, 80, 80, 0.15) 10px
+  );
+  mask-image: linear-gradient(180deg, transparent, #000 40%);
+}
+
+.support-local-signpost {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.sign-board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 28px;
+  font-weight: 900;
+  font-size: 1.35rem;
+  letter-spacing: 2px;
+  border: 3px dotted #c0392b;
+  box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.08);
+}
+
+.sign-board--top {
+  background: #f5f0e6;
+  color: var(--teal-deep);
+  transform: rotate(-2deg);
+  margin-bottom: -4px;
+}
+
+.sign-board--bottom {
+  background: var(--teal-deep);
+  color: #f5f0e6;
+  transform: rotate(1deg);
+}
+
+.sign-pole {
+  width: 12px;
+  height: 50px;
+  background: #5c4a3a;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.sign-arrow {
+  font-size: 1.2rem;
+  color: #c0392b;
+}
+
+.support-local-rickshaw {
+  position: absolute;
+  right: 8%;
+  bottom: 12%;
+  width: 90px;
+  height: 70px;
+  z-index: 1;
+}
+
+.rickshaw-body {
+  position: absolute;
+  bottom: 18px;
+  left: 10px;
+  width: 55px;
+  height: 28px;
+  background: #2d8a3e;
+  border-radius: 4px 8px 4px 4px;
+}
+
+.rickshaw-roof {
+  position: absolute;
+  bottom: 42px;
+  left: 5px;
+  width: 65px;
+  height: 22px;
+  background: #f4d03f;
+  border-radius: 4px 4px 0 0;
+  transform: skewX(-5deg);
+}
+
+.rickshaw-wheel {
+  position: absolute;
+  bottom: 8px;
+  width: 22px;
+  height: 22px;
+  border: 3px solid #333;
+  border-radius: 50%;
+  background: #f5f5f5;
+}
+
+.rickshaw-wheel--1 {
+  left: 12px;
+}
+
+.rickshaw-wheel--2 {
+  right: 8px;
+}

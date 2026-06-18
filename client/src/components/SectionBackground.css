@@ -1,0 +1,27 @@
+.section-bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* Light tint: for sections with dark text on a light background (most of the site). */
+.section-bg-layer--light::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.82);
+  display: none; /* Removed fade/opacity to put them as is */
+}
+
+/* Dark tint: for sections with light text on a dark background. */
+.section-bg-layer--dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 18, 0.55);
+  display: none; /* Removed fade/opacity to put them as is */
+}

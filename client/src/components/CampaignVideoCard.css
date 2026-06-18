@@ -1,0 +1,78 @@
+.campaign-card-ref {
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 0.25s ease;
+}
+
+.campaign-card-ref:hover {
+  transform: rotate(0deg) translateY(-8px);
+}
+
+.campaign-card-ref-inner {
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-align: left;
+}
+
+.campaign-card-ref-video {
+  position: relative;
+  aspect-ratio: 3/4;
+}
+
+.campaign-card-ref-video img,
+.campaign-card-ref-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.campaign-card-ref-duration {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.campaign-card-ref-play {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.campaign-card-ref-meta {
+  padding: 12px;
+}
+
+.campaign-card-ref-handle {
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: block;
+}
+
+.campaign-card-ref-handle .verified {
+  color: #e74c3c;
+  font-size: 0.75rem;
+}
+
+.campaign-card-ref-stats {
+  font-size: 0.78rem;
+  color: #666;
+}

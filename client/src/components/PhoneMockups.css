@@ -1,0 +1,264 @@
+.phone-mockups {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 380px;
+  margin: 0 auto;
+}
+
+.phone-frame {
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  background: #1e1d1b;
+  border-radius: 28px;
+  padding: 10px;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.25);
+}
+
+.phone-frame--back {
+  left: 0;
+  top: 50px;
+  transform: rotate(-8deg);
+  z-index: 1;
+}
+
+.phone-frame--front {
+  right: 0;
+  top: 10px;
+  transform: rotate(4deg);
+  z-index: 2;
+  border: 3px solid #1e1d1b;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.phone-screen--splash {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.phone-screen--splash::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(244, 123, 32, 0.75) 0%, rgba(251, 176, 59, 0.6) 45%, rgba(0, 168, 158, 0.65) 100%);
+}
+
+.phone-splash-logo {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.phone-splash-urdu {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.phone-splash-logo span:last-child {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.phone-screen--feed-rich {
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+  padding: 8px;
+  gap: 6px;
+}
+
+.phone-feed-search {
+  font-size: 0.55rem;
+  padding: 6px 10px;
+  background: #eee;
+  border-radius: 20px;
+  color: #888;
+}
+
+.phone-feed-promo {
+  background: linear-gradient(90deg, #f47b20, #fbb03b);
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+}
+
+.phone-feed-promo button {
+  border: none;
+  background: #fff;
+  color: #f47b20;
+  font-size: 0.5rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.phone-feed-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  flex: 1;
+}
+
+.feed-tile--img {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: relative;
+  min-height: 0;
+}
+
+.feed-tile-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.phone-verified-badge {
+  position: absolute;
+  top: 18px;
+  left: -8px;
+  z-index: 5;
+  background: var(--teal);
+  color: #fff;
+  font-size: 0.55rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.phone-mockups--verified {
+  max-width: 300px;
+  height: 360px;
+}
+
+.phone-screen--profile-rich {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-profile-banner {
+  height: 56px;
+  background-size: cover;
+  background-position: center;
+}
+
+.phone-profile-user {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  align-items: center;
+  margin-top: -16px;
+}
+
+.phone-profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+}
+
+.phone-profile-user strong {
+  display: block;
+  font-size: 0.62rem;
+}
+
+.phone-profile-user span {
+  font-size: 0.5rem;
+  color: #666;
+}
+
+.phone-screen--catalogue {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.55rem;
+}
+
+.phone-shop-banner {
+  height: 44px;
+  background-size: cover;
+  background-position: center;
+}
+
+.phone-shop-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 6px 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.phone-shop-tabs span {
+  font-size: 0.48rem;
+  font-weight: 700;
+  color: #999;
+  padding: 2px 4px;
+}
+
+.phone-shop-tabs .active {
+  background: #f47b20;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.phone-product-list {
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.phone-product-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.phone-product-row img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.phone-product-row p {
+  margin: 0;
+  font-size: 0.48rem;
+  line-height: 1.2;
+}
+
+.phone-product-row strong {
+  font-size: 0.5rem;
+  color: #f47b20;
+}

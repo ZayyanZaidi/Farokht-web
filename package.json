@@ -11,6 +11,7 @@
     "start": "cd server && npm start"
   },
   "dependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "dotenv": "^17.4.2"
   }
 }

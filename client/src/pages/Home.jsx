@@ -277,7 +277,6 @@ export default function Home() {
                 setHeroPlaying(true);
               }}
               onBlogsChanged={loadBlogs}
-              onBackgroundsChanged={loadBackgrounds}
             />
           </div>
         </section>

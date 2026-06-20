@@ -39,11 +39,17 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Serve static assets (downloaded Canva media) from /media_assets
 app.use('/media', express.static(path.join(__dirname, '..', 'scratch', 'media_assets')));
 
-// Serve frontend build in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
+// Serve frontend build in production if it exists
+const fs = require('fs');
+const distPath = path.join(__dirname, '..', 'client', 'dist');
+if (process.env.NODE_ENV === 'production' && fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+} else {
+  app.get('/', (req, res) => {
+    res.json({ message: 'Farokht API is running.' });
   });
 }
 

@@ -33,8 +33,9 @@ app.use('/api/hero', heroRoutes);
 app.use('/api/farokht', farokhtRoutes);
 app.use('/api/backgrounds', backgroundRoutes);
 
-// Serve uploaded media
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// Serve uploaded media (use /tmp on Vercel read-only filesystem)
+const uploadStaticDir = process.env.VERCEL ? '/tmp' : path.join(__dirname, 'uploads');
+app.use('/uploads', express.static(uploadStaticDir));
 
 // Serve static assets (downloaded Canva media) from /media_assets
 app.use('/media', express.static(path.join(__dirname, '..', 'scratch', 'media_assets')));

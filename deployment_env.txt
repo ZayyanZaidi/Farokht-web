@@ -1,0 +1,42 @@
+# Deployment Environment Variables Guide
+
+This guide outlines the environment variables required when deploying the frontend (on Vercel) and backend (on Render) for the Farokht platform.
+
+---
+
+## 1. Frontend Deployment (Vercel)
+
+These variables must be added to the Vercel project settings under **Environment Variables**.
+
+| Variable Name | Required | Default/Example Value | Description |
+|---|---|---|---|
+| `VITE_API_URL` | **Yes** | `https://farokht-backend.onrender.com` | The public URL of your deployed backend service on Render. **Do not add a trailing slash.** |
+| `VITE_API_KEY` | No | *(optional)* | Optional key used if you restrict access or customize API headers on the client. |
+
+> **Vercel Build Command & Directory Settings:**
+> - **Framework Preset**: Vite
+> - **Root Directory**: `client`
+> - **Build Command**: `npm run build`
+> - **Output Directory**: `dist`
+
+---
+
+## 2. Backend Deployment (Render)
+
+These variables must be added to the Render Web Service settings under **Environment Variables** (or via a secret file).
+
+| Variable Name | Required | Default/Example Value | Description |
+|---|---|---|---|
+| `MONGO_URI` | **Yes** | `mongodb+srv://<username>:<password>@cluster0.mongodb.net/farokht?retryWrites=true&w=majority` | Your MongoDB connection string (Atlas or self-hosted). If not provided, it falls back to a local JSON file db (not recommended for production). |
+| `JWT_SECRET` | **Yes** | `a_long_random_secure_secret_string_here` | Secret key used for signing and verifying JWT authentication tokens. Use a strong random key. |
+| `NODE_ENV` | **Yes** | `production` | Set to `production` to optimize performance and handle file paths correctly. |
+| `PORT` | No | `5000` | Render assigns this dynamically, but you can explicitly specify it if required. |
+| `ADMIN_EMAIL` | No | `admin@farokht.pk` | Used when seeding the initial administrator account. |
+| `ADMIN_PASSWORD` | No | `FarokhtAdmin123!` | Password for the initial seeded administrator account. |
+| `FAROKHT_API_URL` | No | `https://svc-frkt-app-x8d4k2.farokht.store/api/v1/ml/datasets` | The external machine learning dataset endpoint. |
+| `FAROKHT_API_KEY` | No | `your_farokht_external_api_key` | Secret API key to authenticate requests to the external Farokht datasets API. |
+
+> **Render Service Settings:**
+> - **Environment**: Node
+> - **Build Command**: `npm run install-all` (if deploying from root, or `npm install` inside the `server` directory)
+> - **Start Command**: `node server.js` (from the `server` directory)

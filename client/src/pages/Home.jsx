@@ -87,7 +87,7 @@ export default function Home() {
       const response = await apiFetch('/api/stories?type=blog');
       if (response.ok) {
         const data = await response.json();
-        if (Array.isArray(data) && data.length > 0) setBlogs(data);
+        if (Array.isArray(data)) setBlogs(data);
       }
     } catch (err) {
       console.error('Blogs load failed:', err);

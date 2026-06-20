@@ -1,6 +1,13 @@
 .blog-section {
   background: #ffffff;
   padding: 80px 18px 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .blog-section--podcast {

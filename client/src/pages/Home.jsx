@@ -94,10 +94,7 @@ export default function Home() {
     }
   };
 
-  const loadBackgrounds = async () => {
-    const data = await fetchSectionBackgrounds();
-    setSectionBackgrounds(data);
-  };
+
 
   const loadFarokhtData = async () => {
     setDataLoading(true);
@@ -152,7 +149,6 @@ export default function Home() {
     loadHero();
     loadBlogs();
     loadFarokhtData();
-    loadBackgrounds();
   }, []);
 
   const scrollFeed = (direction) => {

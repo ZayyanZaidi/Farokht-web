@@ -3,15 +3,15 @@ const { SectionBackground } = require('../models/dbManager');
 // Default background image for each homepage/site section. These ship with the
 // project (client/public/assets/bg/*.jpg) and are used until an admin overrides them.
 const SECTION_DEFAULTS = {
-  hero: '/assets/bg/hero.jpg',
-  brands: '/assets/bg/brands.jpg',
-  supportLocal: '/assets/bg/support-local.jpg',
-  feed: '/assets/bg/feed.jpg',
-  appPromo: '/assets/bg/app-promo.jpg',
-  foreignApps: '/assets/bg/foreign-apps.jpg',
-  milestones: '/assets/bg/milestones.jpg',
-  campaign: '/assets/bg/campaign.jpg',
-  blog: '/assets/bg/blog.jpg',
+  hero: '/assets/bg/hero.png',
+  brands: '/assets/bg/blank.jpeg',
+  supportLocal: '/assets/bg/blank.jpeg',
+  feed: '/assets/bg/blank.jpeg',
+  appPromo: '/assets/bg/blank.jpeg',
+  foreignApps: '/assets/bg/catalog.jpeg',
+  milestones: '/assets/bg/blank.jpeg',
+  campaign: '/assets/bg/main-hoon.jpeg',
+  blog: '/assets/bg/blank.jpeg',
   footer: '/assets/bg/footer.jpg'
 };
 

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import MediaUpload from './MediaUpload';
 import { apiFetch, resolveMediaUrl } from '../utils/api';
-import { fetchSectionBackgrounds, saveSectionBackground, resetSectionBackground, resolveBackgroundUrl } from '../utils/backgrounds';
-import { SECTION_DEFS } from '../data/sectionBackgrounds';
 import './AdminPanel.css';
 
 const emptyBlog = {
@@ -27,8 +25,6 @@ export default function AdminPanel({ onHeroSaved, onBlogsChanged, onBackgroundsC
   const [blogForm, setBlogForm] = useState(emptyBlog);
   const [editingBlog, setEditingBlog] = useState(null);
   const [blogs, setBlogs] = useState([]);
-  const [backgrounds, setBackgrounds] = useState({});
-  const [savingSection, setSavingSection] = useState('');
 
   const loadBlogs = async () => {
     const response = await apiFetch('/api/stories?type=blog');
@@ -38,14 +34,8 @@ export default function AdminPanel({ onHeroSaved, onBlogsChanged, onBackgroundsC
     }
   };
 
-  const loadBackgrounds = async () => {
-    const data = await fetchSectionBackgrounds();
-    setBackgrounds(data);
-  };
-
   React.useEffect(() => {
     loadBlogs();
-    loadBackgrounds();
   }, []);
 
   const handleHeroChange = (e) => {
@@ -140,33 +130,7 @@ export default function AdminPanel({ onHeroSaved, onBlogsChanged, onBackgroundsC
     setBlogForm(emptyBlog);
   };
 
-  const handleBackgroundUploaded = async (sectionId, { mediaUrl }) => {
-    setSavingSection(sectionId);
-    try {
-      await saveSectionBackground(sectionId, mediaUrl);
-      setBackgrounds((prev) => ({ ...prev, [sectionId]: mediaUrl }));
-      setMessage('Background updated.');
-      onBackgroundsChanged?.();
-    } catch (err) {
-      setMessage(err.message || 'Failed to save background.');
-    } finally {
-      setSavingSection('');
-    }
-  };
 
-  const handleBackgroundReset = async (sectionId) => {
-    setSavingSection(sectionId);
-    try {
-      const result = await resetSectionBackground(sectionId);
-      setBackgrounds((prev) => ({ ...prev, [sectionId]: result.imageUrl }));
-      setMessage('Background reset to default.');
-      onBackgroundsChanged?.();
-    } catch (err) {
-      setMessage(err.message || 'Failed to reset background.');
-    } finally {
-      setSavingSection('');
-    }
-  };
 
   return (
     <aside className="admin-panel" id="admin-panel">
@@ -267,39 +231,6 @@ export default function AdminPanel({ onHeroSaved, onBlogsChanged, onBackgroundsC
         </div>
       </div>
 
-      <div className="admin-panel-card admin-bg-card">
-        <h4>Section backgrounds</h4>
-        <p className="admin-bg-hint">Upload a new photo for any section below, or reset it to the default.</p>
-        <div className="admin-bg-grid">
-          {SECTION_DEFS.map((section) => {
-            const current = backgrounds[section.id] || section.default;
-            const isDefault = current === section.default;
-            return (
-              <div key={section.id} className="admin-bg-row">
-                <div className="admin-bg-thumb">
-                  <img src={resolveBackgroundUrl(current)} alt={`${section.label} background`} />
-                </div>
-                <div className="admin-bg-controls">
-                  <span className="admin-bg-label">{section.label}</span>
-                  <MediaUpload
-                    label={savingSection === section.id ? 'Saving…' : 'Upload new'}
-                    accept="image/*"
-                    onUploaded={(result) => handleBackgroundUploaded(section.id, result)}
-                  />
-                  <button
-                    type="button"
-                    className="btn btn-outline-dark admin-bg-reset"
-                    onClick={() => handleBackgroundReset(section.id)}
-                    disabled={isDefault || savingSection === section.id}
-                  >
-                    Reset to default
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
 
       {blogs.length > 0 && (
         <div className="admin-blog-list">

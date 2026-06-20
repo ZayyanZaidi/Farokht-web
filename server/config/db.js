@@ -7,19 +7,23 @@ const localDbPath = path.join(__dirname, '..', 'data', 'local_db.json');
 
 // Initialize local JSON DB if it doesn't exist
 function initLocalDb() {
-  const dbDir = path.dirname(localDbPath);
-  if (!fs.existsSync(dbDir)) {
-    fs.mkdirSync(dbDir, { recursive: true });
-  }
-  if (!fs.existsSync(localDbPath)) {
-    const initialData = {
-      users: [],
-      brands: [],
-      products: [],
-      stories: [],
-      sectionBackgrounds: []
-    };
-    fs.writeFileSync(localDbPath, JSON.stringify(initialData, null, 2), 'utf-8');
+  try {
+    const dbDir = path.dirname(localDbPath);
+    if (!fs.existsSync(dbDir)) {
+      fs.mkdirSync(dbDir, { recursive: true });
+    }
+    if (!fs.existsSync(localDbPath)) {
+      const initialData = {
+        users: [],
+        brands: [],
+        products: [],
+        stories: [],
+        sectionBackgrounds: []
+      };
+      fs.writeFileSync(localDbPath, JSON.stringify(initialData, null, 2), 'utf-8');
+    }
+  } catch (err) {
+    console.warn("⚠️ Local JSON DB initialization skipped (read-only filesystem):", err.message);
   }
 }
 
